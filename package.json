@@ -1,0 +1,23 @@
+{
+  "name": "vanilla_react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --write \"src/**/*.{js,jsx}\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KillerRP/Vanilla_React.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KillerRP/Vanilla_React/issues"
+  },
+  "homepage": "https://github.com/KillerRP/Vanilla_React#readme",
+  "devDependencies": {
+    "prettier": "^2.5.1"
+  }
+}

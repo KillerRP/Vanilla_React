@@ -1,25 +1,34 @@
-const Pet = (props) => {
-  return React.createElement("div", {}, [
-    React.createElement("h1", {}, props.name),
-    React.createElement("h2", {}, props.animal),
-    React.createElement("h3", {}, props.breed),
-  ]);
-};
+import { StrictMode } from "react/cjs/react.production.min";
+import React from "react";
+import ReactDOM from "react-dom";
+import SearchParam from "./SearchParam";
+import Details from "./Details";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import About from "./About";
 
 const App = () => {
-  return React.createElement("div", { id: "brand" }, [
-    React.createElement("h1", {}, "Hello World."),
-    React.createElement(Pet, {
-      name: "Lucas",
-      animal: "Dog",
-      breed: "Bulldog",
-    }),
-    React.createElement(Pet, { name: "Leo", animal: "Lion", breed: "Lion" }),
-    React.createElement(Pet, {
-      name: "Jacob",
-      animal: "Wolf",
-      breed: "Warewolf",
-    }),
-  ]);
+  return (
+    <div>
+      <Router>
+        <header>
+          <Link to="/">
+            <h1> Hello World</h1>
+          </Link>
+        </header>
+
+        <Routes>
+          <Route path="/details/:id" element={<Details />} />
+          <Route path="/details/" element={<About />} />
+          <Route path="/" element={<SearchParam />} />
+        </Routes>
+      </Router>
+    </div>
+  );
 };
-ReactDOM.render(React.createElement(App), document.getElementById("root"));
+
+ReactDOM.render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+  document.getElementById("root")
+);

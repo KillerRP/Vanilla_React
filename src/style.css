@@ -326,3 +326,6 @@ header {
     height: 60px;
   }
 }
+hr {
+  width: 80px;
+}
